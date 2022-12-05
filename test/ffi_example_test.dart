@@ -17,7 +17,7 @@ void main() {
       final test = await Process.run('./fibonacci_test', [], workingDirectory: 'fibonacci');
       expect(test.exitCode, 0);
       expect(test.stderr, isEmpty);
-      expect(test.stdout, equals('linearFibonacci(15) == 610\nrecursiveFibonacci(21) == 10946\n'));
+      expect(test.stdout, equals('recursive(15) == 610\nlinear(21) == 10946\n'));
     });
   });
 }
