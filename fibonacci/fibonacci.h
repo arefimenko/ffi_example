@@ -5,6 +5,7 @@
 #ifndef FFI_EXAMPLE_FIBONACCI_H
 #define FFI_EXAMPLE_FIBONACCI_H
 
-int fibonacci(int n);
+int linearFibonacci(int n);
+int recursiveFibonacci(int n);
 
 #endif //FFI_EXAMPLE_FIBONACCI_H

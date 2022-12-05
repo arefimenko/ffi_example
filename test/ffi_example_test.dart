@@ -11,11 +11,13 @@ void main() {
 
       final make = await Process.run('make', [], workingDirectory: 'fibonacci');
       expect(make.exitCode, 0);
+    });
 
+    test('execute Fibonacci test file', () async {
       final test = await Process.run('./fibonacci_test', [], workingDirectory: 'fibonacci');
       expect(test.exitCode, 0);
       expect(test.stderr, isEmpty);
-      expect(test.stdout, equals('fibonacci(15) == 610\n'));
+      expect(test.stdout, equals('linearFibonacci(15) == 610\nrecursiveFibonacci(21) == 10946\n'));
     });
   });
 }
