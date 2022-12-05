@@ -1,5 +1,5 @@
 import 'dart:ffi' as ffi;
-import 'dart:io' show Directory;
+import 'dart:io' show Directory, stdout;
 import 'package:path/path.dart' as path;
 
 typedef _NativeFibonacci = ffi.Int32 Function(ffi.Int32);
@@ -19,6 +19,22 @@ class Fibonacci {
     _recursiveNative = fibonacciLib
         .lookup<ffi.NativeFunction<_NativeFibonacci>>('recursive')
         .asFunction<_DartFibonacci>();
+  }
+
+  /// Execute all Fibonacci functions for [n]'s element.
+  void executeAllFor(int n) {
+    void execute(Function() func, String name) {
+      final sw = Stopwatch()..start();
+      func();
+      sw.stop();
+      stdout.writeln('${name.padLeft(15)}: ${sw.elapsedMicroseconds}');
+    }
+
+    stdout.writeln("fibonacci for $n's element (execution time in microseconds)");
+    execute(() => linear(n), 'linear');
+    execute(() => linearNative(n), 'linearNative');
+    execute(() => recursive(n), 'recursive');
+    execute(() => recursiveNative(n), 'recursiveNative');
   }
 
   /// Recursive Fibonacci sequence execution.
