@@ -1,0 +1,17 @@
+#
+.idea/
+
+# Files and directories created by pub.
+.dart_tool/
+.packages
+
+# Conventional directory for build output.
+build/
+
+# Fibonacci lib generated files
+fibonacci/CMakeFiles/
+fibonacci/cmake_install.cmake
+fibonacci/CMakeCache.txt
+fibonacci/fibonacci_test
+fibonacci/libfibonacci.dylib
+fibonacci/Makefile
