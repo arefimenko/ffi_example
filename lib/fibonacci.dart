@@ -12,11 +12,11 @@ class Fibonacci {
 
   Fibonacci() {
     // TODO(arefimenko): port to Linux/Windows OS.
-    final cppLib = ffi.DynamicLibrary.open(
+    final fibonacciLib = ffi.DynamicLibrary.open(
       path.join(Directory.current.path, 'fibonacci', 'libfibonacci.dylib'),
     );
-    _linearNative = cppLib.lookupFunction<_NativeFibonacci, _DartFibonacci>('linear');
-    _recursiveNative = cppLib
+    _linearNative = fibonacciLib.lookupFunction<_NativeFibonacci, _DartFibonacci>('linear');
+    _recursiveNative = fibonacciLib
         .lookup<ffi.NativeFunction<_NativeFibonacci>>('recursive')
         .asFunction<_DartFibonacci>();
   }
