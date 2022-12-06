@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('Fibonacci cpp lib', () {
-    test('make dylib and execute test file', () async {
+    test('make dylib', () async {
       final cmake = await Process.run('cmake', ['.'], workingDirectory: 'fibonacci');
       expect(cmake.exitCode, 0);
 

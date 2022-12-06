@@ -23,3 +23,11 @@ date_time/CMakeCache.txt
 date_time/date_time_test
 date_time/libdate_time.dylib
 date_time/Makefile
+
+# Calculator lib generated files
+calculator/CMakeFiles/
+calculator/cmake_install.cmake
+calculator/CMakeCache.txt
+calculator/calculator_test
+calculator/libcalculator.dylib
+calculator/Makefile

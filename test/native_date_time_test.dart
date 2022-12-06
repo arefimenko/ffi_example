@@ -7,7 +7,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('DateTime cpp lib', () {
-    test('make dylib and execute test file', () async {
+    test('make dylib', () async {
       final cmake = await Process.run('cmake', ['.'], workingDirectory: 'date_time');
       expect(cmake.exitCode, 0);
 
