@@ -1,0 +1,6 @@
+output: lib/native_date_time.dart
+name: NativeDateTime
+description: Native base DateTime struct impl
+headers:
+  entry-points:
+    - "date_time/date_time.h"
