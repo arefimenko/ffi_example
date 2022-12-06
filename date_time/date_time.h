@@ -7,7 +7,9 @@
 
 #include <iostream>
 
+#ifdef __cplusplus
 extern "C" {
+#endif
 
 /// Day values for each month.
 const int monthDays[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -48,6 +50,8 @@ void changeMonth(DateTime *time, int month);
 /// \throws std::invalid_argument - if day less than 1 or greater than possible for [time->month] days.
 void changeDay(DateTime *time, int day);
 
+#ifdef __cplusplus
 }
+#endif
 
 #endif //FFI_EXAMPLE_DATE_TIME_H
