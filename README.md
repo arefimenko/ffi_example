@@ -1,2 +1,3 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Sample project with Dart FFI examples.
+
+Call `init.sh` in root directory to init project.
